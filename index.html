@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TU NOMBRE | Soluciones Tecnológicas</title>
     <style>
-        /* Importamos una fuente moderna de Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
-        /* Variables de colores (Estilo oscuro y moderno) */
         :root {
-            --bg-color: #0f172a; /* Azul muy oscuro */
-            --text-color: #f8fafc; /* Blanco roto */
-            --accent-color: #3b82f6; /* Azul brillante para botones */
-            --card-bg: #1e293b; /* Fondo de las tarjetas */
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #3b82f6;
+            --card-bg: #1e293b;
         }
 
         * {
@@ -29,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* --- NAVEGACIÓN --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -46,7 +43,6 @@
             color: var(--accent-color);
         }
 
-        /* --- HERO SECTION (Presentación) --- */
         header {
             text-align: center;
             padding: 100px 20px;
@@ -65,7 +61,6 @@
             margin-bottom: 40px;
         }
 
-        /* --- SECCIÓN DE SERVICIOS (Las Tarjetas) --- */
         .servicios-container {
             padding: 50px 20px;
             max-width: 1200px;
@@ -80,7 +75,7 @@
 
         .grid-tarjetas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustado para 4 tarjetas */
             gap: 30px;
         }
 
@@ -92,6 +87,7 @@
             display: flex;
             flex-direction: column;
             border: 1px solid #334155;
+            text-align: left; /* Texto alineado a la izquierda para leer mejor las listas */
         }
 
         .tarjeta:hover {
@@ -101,26 +97,32 @@
         }
 
         .tarjeta h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--accent-color);
         }
 
         .tarjeta p {
             color: #cbd5e1;
-            margin-bottom: 20px;
-            flex-grow: 1; /* Empuja el botón hacia abajo */
+            margin-bottom: 15px;
+            font-size: 0.95rem;
         }
 
-        .precio {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .tarjeta ul {
+            color: #94a3b8;
             margin-bottom: 20px;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            flex-grow: 1;
         }
 
-        /* --- BOTONES --- */
+        .tarjeta ul li {
+            margin-bottom: 8px;
+        }
+
         .btn {
-            display: inline-block;
+            display: block;
+            text-align: center;
             background-color: var(--accent-color);
             color: white;
             padding: 12px 24px;
@@ -136,7 +138,6 @@
             background-color: #2563eb;
         }
 
-        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -145,7 +146,6 @@
             color: #94a3b8;
         }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
             nav { padding: 20px; }
@@ -159,41 +159,63 @@
     </nav>
 
     <header>
-        <h1>Soluciono problemas técnicos y digitales.</h1>
-        <p>Me adapto a lo que necesites. Desde crear tu presencia en internet hasta automatizar tareas aburridas para que tu negocio (o tú) ahorre tiempo y dinero.</p>
-        <a href="#servicios" class="btn">Ver mis servicios</a>
+        <h1>Servicios informáticos integrales</h1>
+        <p>Desarrollo, gestión de datos y soluciones a medida. Si se puede programar o configurar, puedo hacerlo por ti.</p>
+        <a href="#servicios" class="btn" style="display: inline-block;">Ver mis servicios</a>
     </header>
 
     <section id="servicios" class="servicios-container">
-        <h2>¿En qué te puedo ayudar hoy?</h2>
+        <h2>Áreas de especialidad</h2>
         
         <div class="grid-tarjetas">
             <div class="tarjeta">
-                <h3>Desarrollo Web Base</h3>
-                <p>Una página web profesional, rápida y adaptada a móviles para que tengas presencia en internet desde ya.</p>
-                <div class="precio">Desde 150€</div>
-                <a href="https://wa.me/TU_NUMERO?text=Hola,%20me%20interesa%20el%20servicio%20de%20Desarrollo%20Web" target="_blank" class="btn">Me interesa</a>
+                <h3>Desarrollo Web</h3>
+                <p>Presencia digital completa para tu negocio o marca personal.</p>
+                <ul>
+                    <li>Páginas corporativas</li>
+                    <li>Portfolios y Landing Pages</li>
+                    <li>Mantenimiento web</li>
+                </ul>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20me%20interesa%20el%20servicio%20de%20Desarrollo%20Web" target="_blank" class="btn">Solicitar</a>
             </div>
 
             <div class="tarjeta">
-                <h3>Soporte y Reparación</h3>
-                <p>¿Problemas con tu ordenador, red o software? Diagnóstico y resolución de problemas técnicos rápido y directo.</p>
-                <div class="precio">Consultar</div>
-                <a href="https://wa.me/TU_NUMERO?text=Hola,%20necesito%20ayuda%20con%20un%20problema%20técnico" target="_blank" class="btn">Contactar</a>
+                <h3>Datos y Ofimática</h3>
+                <p>Organiza tu información y haz que tus herramientas trabajen para ti.</p>
+                <ul>
+                    <li>Bases de datos</li>
+                    <li>Excel avanzado y macros</li>
+                    <li>Automatización de tareas</li>
+                </ul>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20necesito%20ayuda%20con%20Datos%20y%20Ofimática" target="_blank" class="btn">Solicitar</a>
             </div>
 
             <div class="tarjeta">
-                <h3>Automatización y Scripts</h3>
-                <p>Si haces una tarea repetitiva todos los días en el ordenador, te creo un programa para que la máquina lo haga sola.</p>
-                <div class="precio">A medida</div>
-                <a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20automatizar%20una%20tarea" target="_blank" class="btn">Cuéntame tu idea</a>
+                <h3>Desarrollo a Medida</h3>
+                <p>Si tienes una idea en la cabeza, le damos vida mediante código.</p>
+                <ul>
+                    <li>Creación de videojuegos</li>
+                    <li>Scripts personalizados</li>
+                    <li>Lógica de programación</li>
+                </ul>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20quiero%20desarrollo%20a%20medida" target="_blank" class="btn">Solicitar</a>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Sistemas y Redes</h3>
+                <p>Infraestructura sólida para que todo funcione sin interrupciones.</p>
+                <ul>
+                    <li>Configuración de redes</li>
+                    <li>Gestión de servidores</li>
+                    <li>Soporte de software</li>
+                </ul>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20necesito%20ayuda%20con%20Sistemas%20y%20Redes" target="_blank" class="btn">Solicitar</a>
             </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 TU NOMBRE. Todos los derechos reservados.</p>
-        <p>No dudes en contactarme para cualquier consulta sin compromiso.</p>
     </footer>
 
 </body>
