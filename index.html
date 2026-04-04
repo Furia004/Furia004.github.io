@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TU NOMBRE | Soluciones Tecnológicas</title>
+    <title>TU NOMBRE | Soluciones Digitales Integrales</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
@@ -58,7 +58,16 @@
         header p {
             font-size: 1.2rem;
             color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+        
+        .destacado {
+            background-color: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 40px;
+            font-weight: bold;
         }
 
         .servicios-container {
@@ -75,7 +84,7 @@
 
         .grid-tarjetas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustado para 4 tarjetas */
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
@@ -87,7 +96,7 @@
             display: flex;
             flex-direction: column;
             border: 1px solid #334155;
-            text-align: left; /* Texto alineado a la izquierda para leer mejor las listas */
+            text-align: left;
         }
 
         .tarjeta:hover {
@@ -98,8 +107,14 @@
 
         .tarjeta h3 {
             font-size: 1.4rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--accent-color);
+        }
+        
+        .etiquetas {
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: #64748b;
         }
 
         .tarjeta p {
@@ -110,7 +125,7 @@
 
         .tarjeta ul {
             color: #94a3b8;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-left: 20px;
             font-size: 0.9rem;
             flex-grow: 1;
@@ -159,57 +174,66 @@
     </nav>
 
     <header>
-        <h1>Servicios informáticos integrales</h1>
-        <p>Desarrollo, gestión de datos y soluciones a medida. Si se puede programar o configurar, puedo hacerlo por ti.</p>
-        <a href="#servicios" class="btn" style="display: inline-block;">Ver mis servicios</a>
+        <h1>Soluciones Digitales 360º</h1>
+        <p>Desde la infraestructura de red hasta el diseño 3D. Si tu empresa necesita un impulso tecnológico, yo me encargo de construirlo.</p>
+        
+        <div class="destacado">
+            ¿Tienes una idea compleja? Consúltame cualquier cosa en este contacto y te responderé lo antes posible para ver cómo le damos forma.
+        </div>
+        
+        <a href="#servicios" class="btn" style="display: inline-block;">Ver áreas de trabajo</a>
     </header>
 
     <section id="servicios" class="servicios-container">
-        <h2>Áreas de especialidad</h2>
+        <h2>¿En qué te puedo ayudar?</h2>
         
         <div class="grid-tarjetas">
             <div class="tarjeta">
-                <h3>Desarrollo Web</h3>
-                <p>Presencia digital completa para tu negocio o marca personal.</p>
+                <h3>Desarrollo Web y Software</h3>
+                <div class="etiquetas">HTML | CSS | PHP | C# | p5.js</div>
+                <p>Programación a medida para dar vida a tus proyectos en internet o crear herramientas dedicadas.</p>
                 <ul>
-                    <li>Páginas corporativas</li>
-                    <li>Portfolios y Landing Pages</li>
-                    <li>Mantenimiento web</li>
+                    <li>Diseño web corporativo y portfolios</li>
+                    <li>Desarrollo de videojuegos</li>
+                    <li>Programación y scripts a medida</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20me%20interesa%20el%20servicio%20de%20Desarrollo%20Web" target="_blank" class="btn">Solicitar</a>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Desarrollo%20y%20Software" target="_blank" class="btn">Consultar</a>
             </div>
 
             <div class="tarjeta">
-                <h3>Datos y Ofimática</h3>
-                <p>Organiza tu información y haz que tus herramientas trabajen para ti.</p>
+                <h3>Diseño 3D y Audiovisual</h3>
+                <div class="etiquetas">Blender | Unity | Suite Adobe</div>
+                <p>Creación de contenido visual de alto impacto para marcas, productos o entretenimiento.</p>
                 <ul>
-                    <li>Bases de datos</li>
-                    <li>Excel avanzado y macros</li>
-                    <li>Automatización de tareas</li>
+                    <li>Modelado y animación 3D</li>
+                    <li>Edición de vídeo, efectos y etalonaje</li>
+                    <li>Retoque fotográfico y diseño gráfico</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20necesito%20ayuda%20con%20Datos%20y%20Ofimática" target="_blank" class="btn">Solicitar</a>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Desarrollo a Medida</h3>
-                <p>Si tienes una idea en la cabeza, le damos vida mediante código.</p>
-                <ul>
-                    <li>Creación de videojuegos</li>
-                    <li>Scripts personalizados</li>
-                    <li>Lógica de programación</li>
-                </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20quiero%20desarrollo%20a%20medida" target="_blank" class="btn">Solicitar</a>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Diseño%203D%20y%20Audiovisual" target="_blank" class="btn">Consultar</a>
             </div>
 
             <div class="tarjeta">
                 <h3>Sistemas y Redes</h3>
-                <p>Infraestructura sólida para que todo funcione sin interrupciones.</p>
+                <div class="etiquetas">Hardware | Servidores | Infraestructura</div>
+                <p>Organización y puesta a punto de toda la tecnología que necesita tu empresa para operar.</p>
                 <ul>
-                    <li>Configuración de redes</li>
-                    <li>Gestión de servidores</li>
-                    <li>Soporte de software</li>
+                    <li>Montaje y gestión de servidores</li>
+                    <li>Configuración de redes locales</li>
+                    <li>Organización de equipos informáticos</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20necesito%20ayuda%20con%20Sistemas%20y%20Redes" target="_blank" class="btn">Solicitar</a>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Sistemas%20y%20Redes" target="_blank" class="btn">Consultar</a>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Datos, IA y Gestión</h3>
+                <div class="etiquetas">Excel | DBs | Automatización IA | Social</div>
+                <p>Optimización de procesos aburridos y presencia de marca para que ahorres tiempo y dinero.</p>
+                <ul>
+                    <li>Bases de datos y Excel avanzado</li>
+                    <li>Automatización de tareas con IA</li>
+                    <li>Gestión técnica de Redes Sociales</li>
+                </ul>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Datos%20y%20Automatización" target="_blank" class="btn">Consultar</a>
             </div>
         </div>
     </section>
