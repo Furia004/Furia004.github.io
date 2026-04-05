@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TU NOMBRE | Soluciones Digitales Integrales</title>
+    <title>Manu | Soluciones Digitales Integrales</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
-        :root {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --accent-color: #3b82f6;
-            --card-bg: #1e293b;
+	:root {
+            --bg-color: #121212;
+            --text-color: #e2e8f0;
+            --accent-color: #06b6d4;
+            --card-bg: #1e1e1e;
+            --section-alt: rgba(26, 26, 26, 0.6);
         }
+
+        body {
+            background-color: var(--bg-color);
+            /* El código de las luces de fondo */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(6, 182, 212, 0.1), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.1), transparent 25%);
+            background-attachment: fixed;
+            
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+	/* --- ANIMACIONES DE SCROLL --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+} 
 
         * {
             margin: 0;
@@ -21,11 +46,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+  
 
         nav {
             display: flex;
@@ -35,11 +56,29 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid #334155;
         }
 
         nav .logo {
             font-weight: 700;
             font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
             color: var(--accent-color);
         }
 
@@ -70,8 +109,53 @@
             font-weight: bold;
         }
 
+        /* --- SECCIÓN SOBRE MÍ --- */
+        .sobre-mi {
+            background-color: var(--section-alt);
+            padding: 80px 20px;
+        }
+
+        .sobre-mi-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .foto-perfil {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #334155;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+        }
+
+        .texto-sobre-mi h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .texto-sobre-mi p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .texto-sobre-mi a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .texto-sobre-mi a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- SECCIÓN SERVICIOS --- */
         .servicios-container {
-            padding: 50px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -131,12 +215,62 @@
             flex-grow: 1;
         }
 
-        .tarjeta ul li {
-            margin-bottom: 8px;
+        /* --- SECCIÓN PORTFOLIO --- */
+        .portfolio {
+            background-color: var(--section-alt);
+            padding: 80px 20px;
+            text-align: center;
         }
 
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .grid-portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .proyecto {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            text-align: left;
+        }
+
+        .proyecto-img {
+            width: 100%;
+            height: 200px;
+            background-color: #475569;
+            object-fit: cover;
+        }
+
+        .proyecto-info {
+            padding: 20px;
+        }
+
+        .proyecto-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .proyecto-info p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- BOTONES --- */
         .btn {
-            display: block;
+            display: inline-block;
             text-align: center;
             background-color: var(--accent-color);
             color: white;
@@ -152,52 +286,70 @@
         .btn:hover {
             background-color: #2563eb;
         }
+        
+        .btn-full { display: block; }
 
         footer {
             text-align: center;
             padding: 40px 20px;
-            margin-top: 50px;
             border-top: 1px solid #334155;
             color: #94a3b8;
         }
 
         @media (max-width: 768px) {
+            .sobre-mi-container { flex-direction: column; text-align: center; }
             header h1 { font-size: 2.2rem; }
-            nav { padding: 20px; }
+            nav { flex-direction: column; align-items: center; gap: 15px; }
+            nav ul { padding: 0; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TU NOMBRE</div>
+        <div class="logo">MANU</div>
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portfolio">Mis trabajos</a></li>
+        </ul>
     </nav>
 
     <header>
         <h1>Soluciones Digitales 360º</h1>
-        <p>Desde la infraestructura de red hasta el diseño 3D. Si tu empresa necesita un impulso tecnológico, yo me encargo de construirlo.</p>
-        
+        <p>Desde el montaje del equipo físico hasta el modelado 3D y la programación web. Si se puede crear o reparar, yo me encargo.</p>
         <div class="destacado">
-            ¿Tienes una idea compleja? Consúltame cualquier cosa en este contacto y te responderé lo antes posible para ver cómo le damos forma.
+            ¿Tienes un proyecto en mente o un problema técnico? Consúltame sin compromiso y te responderé lo antes posible.
         </div>
-        
-        <a href="#servicios" class="btn" style="display: inline-block;">Ver áreas de trabajo</a>
+        <a href="#servicios" class="btn">Ver áreas de trabajo</a>
     </header>
+
+    <section id="sobre-mi" class="sobre-mi">
+        <div class="sobre-mi-container">
+            <img src="tu-foto.jpg" alt="Manu - Perfil" class="foto-perfil">
+            <div class="texto-sobre-mi">
+                <h2>Hola, soy Manu</h2>
+                <p>Soy un apasionado de la tecnología con un perfil generalista. Disfruto tanto abriendo un servidor para solucionar un fallo de red, como picando código o diseñando un modelo 3D.</p>
+                <p>Mi base técnica comenzó con el grado de <a href="https://www.todofp.es/que-estudiar/familias-profesionales/informatica-comunicaciones/sistemas-microniformaticos-redes.html" target="_blank">SMR</a>, donde aprendí a fondo sobre montaje de equipos, mantenimiento y sistemas operativos. Puse todo esto en práctica en la <a href="https://madrina.org" target="_blank">Fundación Madrina</a>, gestionando sus servidores, redes y resolviendo los retos técnicos del día a día.</p>
+                <p>Para expandir mis habilidades al mundo creativo, estudié <a href="https://www.todofp.es/que-estudiar/familias-profesionales/imagen-sonido/animaciones3d-juegos-entornos-interactivos.html" target="_blank">Desarrollo de Videojuegos y Animación 3D</a>. Allí aprendí a programar, modelar, crear texturas y editar vídeo. Actualmente aplico estos conocimientos en Tecnidrone System, desarrollando y reconstruyendo su página web.</p>
+                <p>Me encanta mi trabajo y eso se nota en la dedicación y el cariño que pongo en cada detalle. Échale un vistazo a mis proyectos más abajo y veamos cómo puedo ayudarte.</p>
+            </div>
+        </div>
+    </section>
 
     <section id="servicios" class="servicios-container">
         <h2>¿En qué te puedo ayudar?</h2>
-        
         <div class="grid-tarjetas">
             <div class="tarjeta">
                 <h3>Desarrollo Web y Software</h3>
                 <div class="etiquetas">HTML | CSS | PHP | C# | p5.js</div>
                 <p>Programación a medida para dar vida a tus proyectos en internet o crear herramientas dedicadas.</p>
                 <ul>
-                    <li>Diseño web corporativo y portfolios</li>
+                    <li>Diseño web corporativo</li>
                     <li>Desarrollo de videojuegos</li>
-                    <li>Programación y scripts a medida</li>
+                    <li>Aplicaciones interactivas</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Desarrollo%20y%20Software" target="_blank" class="btn">Consultar</a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="btn btn-full">Consultar</a>
             </div>
 
             <div class="tarjeta">
@@ -205,42 +357,98 @@
                 <div class="etiquetas">Blender | Unity | Suite Adobe</div>
                 <p>Creación de contenido visual de alto impacto para marcas, productos o entretenimiento.</p>
                 <ul>
-                    <li>Modelado y animación 3D</li>
-                    <li>Edición de vídeo, efectos y etalonaje</li>
-                    <li>Retoque fotográfico y diseño gráfico</li>
+                    <li>Modelado, texturas y animación 3D</li>
+                    <li>Edición de vídeo y etalonaje</li>
+                    <li>Retoque fotográfico</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Diseño%203D%20y%20Audiovisual" target="_blank" class="btn">Consultar</a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="btn btn-full">Consultar</a>
             </div>
 
             <div class="tarjeta">
-                <h3>Sistemas y Redes</h3>
-                <div class="etiquetas">Hardware | Servidores | Infraestructura</div>
-                <p>Organización y puesta a punto de toda la tecnología que necesita tu empresa para operar.</p>
+                <h3>Sistemas y Hardware</h3>
+                <div class="etiquetas">Equipos | Servidores | OS | Redes</div>
+                <p>Organización, montaje y mantenimiento de toda la tecnología física que necesitas para operar.</p>
                 <ul>
-                    <li>Montaje y gestión de servidores</li>
-                    <li>Configuración de redes locales</li>
-                    <li>Organización de equipos informáticos</li>
+                    <li>Montaje y mantenimiento de PCs</li>
+                    <li>Gestión de Sistemas Operativos</li>
+                    <li>Configuración de servidores y redes</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Sistemas%20y%20Redes" target="_blank" class="btn">Consultar</a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="btn btn-full">Consultar</a>
             </div>
 
             <div class="tarjeta">
                 <h3>Datos, IA y Gestión</h3>
-                <div class="etiquetas">Excel | DBs | Automatización IA | Social</div>
+                <div class="etiquetas">Excel | DBs | Automatización IA</div>
                 <p>Optimización de procesos aburridos y presencia de marca para que ahorres tiempo y dinero.</p>
                 <ul>
-                    <li>Bases de datos y Excel avanzado</li>
-                    <li>Automatización de tareas con IA</li>
-                    <li>Gestión técnica de Redes Sociales</li>
+                    <li>Bases de datos y ofimática</li>
+                    <li>Automatización de tareas</li>
+                    <li>Gestión de Redes Sociales</li>
                 </ul>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20tengo%20una%20consulta%20sobre%20Datos%20y%20Automatización" target="_blank" class="btn">Consultar</a>
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="btn btn-full">Consultar</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 TU NOMBRE. Todos los derechos reservados.</p>
-    </footer>
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-container">
+            <h2>Mis Trabajos</h2>
+            <div class="grid-portfolio">
+                
+                <div class="proyecto">
+                    <img src="proyecto1.jpg" alt="Proyecto 1" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Modelado 3D / Animación</h3>
+                        <div class="etiquetas">Blender | After Effects</div>
+                        <p>Creación de modelos 3D y texturas animadas para entornos interactivos.</p>
+                    </div>
+                </div>
 
+                <div class="proyecto">
+                    <img src="proyecto2.jpg" alt="Proyecto 2" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Desarrollo Web (Tecnidrone)</h3>
+                        <div class="etiquetas">HTML | CSS | PHP</div>
+                        <p>Reconstrucción y desarrollo de la página web corporativa, optimizada para carga rápida.</p>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <img src="proyecto3.jpg" alt="Proyecto 3" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Mantenimiento y Servidores</h3>
+                        <div class="etiquetas">Hardware | Redes</div>
+                        <p>Resolución de incidencias técnicas y gestión de infraestructura de red en entorno real.</p>
+                    </div>
+                </div>
+
+            </div>
+</div> <div style="text-align: center; margin-top: 40px;">
+                <a href="URL_DE_TU_PORTFOLIO_COMPLETO" class="btn">Ver todos mis proyectos</a>
+            </div>
+
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Manu. Todos los derechos reservados.</p>
+    </footer>
+<script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Seleccionamos todas las tarjetas y proyectos para animarlos
+        document.querySelectorAll('.tarjeta, .proyecto, .texto-sobre-mi').forEach((el) => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
